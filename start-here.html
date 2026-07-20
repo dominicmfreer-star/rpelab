@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start here — the beginner's rundown of auto-regulated training | RPE Lab</title>
+  <meta name="description" content="New to RPE and auto-regulated training? Here's everything you need to know in 5 minutes — no articles required. The whole system, plainly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,30..100&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Start-here specific styles — layered on top of base */
+    .start-hero { padding: 64px 0 40px; border-bottom: 1px solid var(--rule); }
+    .start-hero .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .start-hero .eyebrow em { color: var(--accent); font-style: normal; font-weight: 700; }
+    .start-hero h1 {
+      font-family: var(--serif-display);
+      font-weight: 500;
+      font-variation-settings: "opsz" 144, "SOFT" 60;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      max-width: 24ch;
+      color: var(--ink);
+    }
+    .start-hero h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+    .start-hero .lede {
+      margin-top: 20px;
+      max-width: 60ch;
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    .start-body { padding: 40px 0 40px; max-width: 68ch; font-size: 1.1rem; line-height: 1.7; color: var(--ink-soft); }
+    .start-body p { margin-bottom: 20px; }
+    .start-body strong { color: var(--ink); font-weight: 700; }
+    .start-body em { font-style: italic; }
+
+    /* Numbered points as signature element */
+    .point {
+      border-top: 1px solid var(--rule);
+      padding: 32px 0 8px;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      align-items: baseline;
+    }
+    .point .num {
+      font-family: var(--serif-display);
+      font-weight: 500;
+      font-variation-settings: "opsz" 144, "SOFT" 60;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+    }
+    .point-body h2 {
+      font-family: var(--serif-display);
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: -0.012em;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .point-body p { margin-bottom: 14px; }
+    .point-body ul { margin: 8px 0 14px 22px; }
+    .point-body li { margin-bottom: 6px; }
+
+    @media (max-width: 640px) {
+      .point { grid-template-columns: 1fr; gap: 10px; }
+      .point .num { font-size: 2.2rem; }
+    }
+
+    /* CTA blocks */
+    .cta-block {
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding: 28px 0;
+      margin: 32px 0;
+    }
+    .cta-block .cta-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .cta-block h3 {
+      font-family: var(--serif-display);
+      font-weight: 600;
+      font-size: 1.35rem;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .cta-block p { margin-bottom: 14px; }
+    .cta-block a {
+      font-family: var(--serif-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+    }
+    .cta-block a:hover { color: var(--ink); border-color: var(--ink); text-decoration: none; }
+
+    /* Next-steps footer */
+    .next-steps {
+      margin-top: 48px;
+      padding: 40px 0 8px;
+      border-top: 2px solid var(--ink);
+    }
+    .next-steps h2 {
+      font-family: var(--serif-display);
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      color: var(--ink);
+    }
+    .next-steps h2 em { font-style: italic; font-weight: 500; color: var(--accent); }
+    .next-list { list-style: none; padding: 0; }
+    .next-list li {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: baseline;
+    }
+    .next-list .lbl {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+    .next-list .lbl em { color: var(--accent); font-style: normal; }
+    .next-list a {
+      font-family: var(--serif-display);
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .next-list a:hover { color: var(--accent); text-decoration: none; }
+    .next-list .dek { display: block; font-family: var(--serif-body); font-size: 0.95rem; color: var(--muted); margin-top: 4px; font-weight: 400; }
+
+    @media (max-width: 640px) {
+      .next-list li { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">RPE <em>Lab</em></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html">Journal</a>
+      <a href="start-here.html" aria-current="page">Start Here</a>
+      <a href="calculator/">Calculator</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap start-hero">
+    <p class="eyebrow">The <em>5-minute</em> rundown</p>
+    <h1>Start here: everything a <em>beginner</em> needs to know</h1>
+    <p class="lede">No articles required. Below is the whole system — what RPE is, how to rate a set, what the numbers mean for your training, and exactly what to do in your next session. Read it in five minutes. Come back later for the deeper guides.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="start-body">
+
+      <div class="point">
+        <div class="num">01</div>
+        <div class="point-body">
+          <h2>What RPE actually is</h2>
+          <p>RPE (Rating of Perceived Exertion) is a 1–10 scale that rates how hard a set was. For strength training, only one question matters:</p>
+          <p><strong>How many more clean reps did I have?</strong></p>
+          <ul>
+            <li><strong>RPE 10</strong> — zero reps left. Could not have done one more.</li>
+            <li><strong>RPE 9</strong> — one rep left.</li>
+            <li><strong>RPE 8</strong> — two reps left.</li>
+            <li><strong>RPE 7</strong> — three reps left.</li>
+            <li><strong>RPE 6</strong> — four reps left. This is warmup territory.</li>
+          </ul>
+          <p>Half points work the same way. RPE 8.5 means "definitely one left, maybe two." That's the entire scale.</p>
+        </div>
+      </div>
+
+      <div class="point">
+        <div class="num">02</div>
+        <div class="point-body">
+          <h2>Why train with it</h2>
+          <p>Standard programs give you a fixed weight ("do 5 reps at 315 lb"). That weight was calculated from your one-rep max on a day you don't remember, and it demands the same effort whether you slept 8 hours or 4.</p>
+          <p>RPE-based training flips this. Instead of a fixed weight, your program tells you the <em>target effort</em> ("5 reps at RPE 8"). You pick the weight that leaves two reps in the tank <em>today</em>. Strong day? You'll lift more. Bad day? You'll lift less — but you'll still get the intended training stimulus without frying yourself.</p>
+          <p>This is called <strong>autoregulation</strong>. It's why RPE exists.</p>
+        </div>
+      </div>
+
+      <div class="point">
+        <div class="num">03</div>
+        <div class="point-body">
+          <h2>How to rate a set</h2>
+          <p>Rate every working set immediately after racking the bar — before you sit down, check your phone, or talk to anyone. Perceived effort fades within seconds; log it fast, log it honestly. Two rules:</p>
+          <ul>
+            <li><strong>Count clean reps only.</strong> "One more rep" means one more at real form. A grinder or a half-rep doesn't count.</li>
+            <li><strong>Rate what happened, not what the program said.</strong> If the program called for RPE 8 and it felt like 9.5, log 9.5. The whole system runs on accurate data.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="point">
+        <div class="num">04</div>
+        <div class="point-body">
+          <h2>What target should you use</h2>
+          <p>RPE targets aren't random. They match what adaptation you want:</p>
+          <ul>
+            <li><strong>Strength (low reps, 1–5):</strong> live at RPE 7–9. Most productive top sets are at 8. Save 9.5 and 10 for testing.</li>
+            <li><strong>Hypertrophy (6–12 reps):</strong> RPE 7–9, drifting toward 9–10 on last sets of isolation work.</li>
+            <li><strong>Warmups and speed work:</strong> RPE 5–6.</li>
+            <li><strong>Deloads:</strong> cap everything at RPE 6. If it feels like training, it's not a deload.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="point">
+        <div class="num">05</div>
+        <div class="point-body">
+          <h2>Should you use RPE at all?</h2>
+          <p>Honest answer: <strong>not if you're a total beginner still adding weight to the bar every week.</strong> Linear progression works better than RPE when you're in the honeymoon phase — the number just goes up regardless.</p>
+          <p>RPE earns its keep once linear progression stalls. If you've been lifting for at least 6-12 months and can no longer add weight session after session, you're the intended audience.</p>
+          <p>If you're brand new: <em>log</em> RPE from day 1 to build the skill, but <em>program</em> with simple linear progression (add 5 lb next session). Switch to programming by RPE when linear stops working.</p>
+        </div>
+      </div>
+
+      <div class="cta-block">
+        <p class="cta-label">Try it right now</p>
+        <h3>The calculator turns any recent set into a weight for today</h3>
+        <p>Enter one recent hard set (weight, reps, and how it felt), and the calculator gives you your estimated 1RM, today's target load for any rep/RPE combo, and your backoff weights — plate-rounded and gym-ready.</p>
+        <a href="calculator/">Open the RPE calculator →</a>
+      </div>
+
+      <div class="point">
+        <div class="num">06</div>
+        <div class="point-body">
+          <h2>Your first real session</h2>
+          <p>Don't overthink your first block. Do this exact structure, once per main lift:</p>
+          <ul>
+            <li><strong>Warm up</strong> in small jumps, rating each warmup on the RPE scale as practice.</li>
+            <li><strong>One top set of 5 reps @ RPE 8.</strong> That means five reps with two clean reps left in the tank. Use the <a href="calculator/">calculator</a> to get the exact weight if unsure.</li>
+            <li><strong>Three backoff sets at 10% less weight,</strong> same 5 reps.</li>
+            <li><strong>Log every rating.</strong> Every set, in a note or notebook. The log is the whole system.</li>
+          </ul>
+          <p>That single structure — top set plus three backoffs, everything rated — is the skeleton of nearly every serious RPE program. Do this for a few weeks, then read the deeper guides below.</p>
+        </div>
+      </div>
+
+      <div class="point">
+        <div class="num">07</div>
+        <div class="point-body">
+          <h2>What "wrong" looks like — the three traps</h2>
+          <ul>
+            <li><strong>Ego-rating.</strong> Calling grinders "RPE 8" because the program said 8. This corrupts your data and quietly turns RPE back into fixed percentages.</li>
+            <li><strong>Living at RPE 9+.</strong> Every set feeling maximal means you're not autoregulating — you're maxing out with a vocabulary.</li>
+            <li><strong>Ignoring bad days.</strong> If today's warmups feel like week-3-of-the-block warmups, the day is telling you something. Autoregulation means listening to it, not pushing through.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="next-steps">
+        <h2>Next steps — <em>if you want to go deeper</em></h2>
+        <ul class="next-list">
+          <li>
+            <span class="lbl">Field Guide <em>· Effort 6</em></span>
+            <span>
+              <a href="articles/how-to-use-rpe.html">How to use RPE correctly — the full guide</a>
+              <span class="dek">Includes the three-week calibration protocol that fixes almost everyone's ratings.</span>
+            </span>
+          </li>
+          <li>
+            <span class="lbl">Argument <em>· Effort 7</em></span>
+            <span>
+              <a href="articles/rpe-vs-percentage.html">RPE vs percentage training — which should you actually run?</a>
+              <span class="dek">Decision flowchart plus the honest case for each system.</span>
+            </span>
+          </li>
+          <li>
+            <span class="lbl">Programming <em>· Effort 7</em></span>
+            <span>
+              <a href="articles/first-autoregulated-block.html">Your first auto-regulated block — 4 weeks, step by step</a>
+              <span class="dek">Complete block: RPE progression, deload, and how to read the results.</span>
+            </span>
+          </li>
+          <li>
+            <span class="lbl">Reference <em>· Effort 5</em></span>
+            <span>
+              <a href="articles/rpe-chart-explained.html">The RPE chart, explained — and when not to trust it</a>
+              <span class="dek">How to read the chart, plus the three situations where it lies.</span>
+            </span>
+          </li>
+          <li>
+            <span class="lbl">Explainer <em>· Effort 4</em></span>
+            <span>
+              <a href="articles/rpe-vs-rir.html">RPE vs RIR — the difference, and why it matters less than you think</a>
+              <span class="dek">Same information, opposite direction. Pick the one your brain answers faster.</span>
+            </span>
+          </li>
+          <li>
+            <span class="lbl">Tool <em>· Interactive</em></span>
+            <span>
+              <a href="calculator/">The RPE calculator — e1RM, target loads, backoffs</a>
+              <span class="dek">Enter one recent set, get today's weights.</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 RPE Lab</span>
+    <nav aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="disclosure.html">Disclosure</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
